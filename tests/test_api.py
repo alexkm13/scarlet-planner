@@ -26,7 +26,7 @@ class TestCourseSearchEndpoint:
         data = response.json()
         assert "courses" in data
         assert "total" in data
-        assert "query_time_sec" in data
+        assert "query_time_ms" in data
     
     def test_search_with_query(self, test_client):
         response = test_client.get("/api/courses?q=Computer")

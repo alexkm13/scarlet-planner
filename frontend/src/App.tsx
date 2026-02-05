@@ -180,8 +180,8 @@ function App() {
             <p className="text-sm text-[var(--text-muted)]">
               {isLoading ? 'Loading...' : `${data?.total ?? 0} courses found`}
               {(() => {
-                const sec = data?.query_time_sec ?? (data?.query_time_ms != null ? data.query_time_ms / 1000 : null);
-                return sec != null ? <span className="ml-2">({sec.toFixed(1)}s)</span> : null;
+                const ms = data?.query_time_ms;
+                return ms != null ? <span className="ml-2">({Math.round(ms)}ms)</span> : null;
               })()}
             </p>
             

@@ -122,14 +122,14 @@ class CourseResponse(BaseModel):
     """Response for course search endpoint."""
     courses: list[Course]
     total: int
-    query_time_sec: float
+    query_time_ms: float
 
 
 class GroupedCourseResponse(BaseModel):
     """Response for grouped course search endpoint."""
     courses: list[GroupedCourse]
     total: int
-    query_time_sec: float
+    query_time_ms: float
 
 
 class SubjectsResponse(BaseModel):

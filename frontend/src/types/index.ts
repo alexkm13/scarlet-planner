@@ -51,9 +51,7 @@ export interface Course {
 export interface CourseResponse {
   courses: Course[];
   total: number;
-  /** Query time in seconds (preferred). */
-  query_time_sec?: number;
-  /** @deprecated Use query_time_sec. Query time in milliseconds (legacy). */
+  /** Query time in milliseconds. */
   query_time_ms?: number;
 }
 

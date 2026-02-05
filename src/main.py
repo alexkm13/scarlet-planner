@@ -107,23 +107,23 @@ async def search_courses(
             query=q, limit=limit, offset=offset, **filters
         )
         results = enrichment_service.enrich_grouped_courses(results)
-        query_time_sec = time.perf_counter() - start
+        query_time_ms = (time.perf_counter() - start) * 1000
 
         return GroupedCourseResponse(
             courses=results,
             total=total,
-            query_time_sec=round(query_time_sec, 2),
+            query_time_ms=round(query_time_ms, 2),
         )
     else:
         # Return flat list of all sections
         results = course_index.search(query=q, limit=limit, **filters)
         results = enrichment_service.enrich_courses(results)
-        query_time_sec = time.perf_counter() - start
+        query_time_ms = (time.perf_counter() - start) * 1000
 
         return CourseResponse(
             courses=results,
             total=len(results),
-            query_time_sec=round(query_time_sec, 2),
+            query_time_ms=round(query_time_ms, 2),
         )
 
 
