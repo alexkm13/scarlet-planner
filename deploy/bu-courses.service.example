@@ -1,0 +1,20 @@
+# systemd unit for BU Course Search API
+# Copy to /etc/systemd/system/bu-courses.service and adjust paths/env.
+# Then: sudo systemctl daemon-reload && sudo systemctl enable --now bu-courses
+
+[Unit]
+Description=BU Course Search API
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/bu-courses
+EnvironmentFile=/opt/bu-courses/.env
+ExecStart=/opt/bu-courses/.venv/bin/bu-courses
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

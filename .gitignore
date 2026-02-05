@@ -1,0 +1,63 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.venv/
+venv/
+env/
+.env/
+*.egg-info/
+.eggs/
+*.egg
+
+# Build / dist
+dist/
+build/
+*.manifest
+.next/
+out/
+.nuxt/
+.cache/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-*
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Env and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+secrets/
+cookies.json
+cookies.txt
+
+# Test / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+coverage/
+*.cover
+.hypothesis/
+
+# Misc
+*.bak
+*.tmp
+.cache/

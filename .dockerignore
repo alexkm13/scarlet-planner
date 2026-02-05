@@ -1,0 +1,40 @@
+# Git and env
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+
+# Frontend (backend-only image)
+frontend/
+
+# Dependencies and build
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+dist/
+build/
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+*.log
+
+# Test and docs
+tests/
+htmlcov/
+.coverage
+.pytest_cache/
+*.md
+!README.md
+
+# Misc
+Makefile
+*.tmp
+.cache/
