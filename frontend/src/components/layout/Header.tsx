@@ -12,7 +12,7 @@ export function Header({ searchValue, onSearchChange }: HeaderProps) {
         <div className="flex items-center gap-4">
           {/* BU Terrier logo */}
           <img 
-            src="/bu-terrier.png" 
+            src={`${import.meta.env.BASE_URL}bu-terrier.png`} 
             alt="BU Terrier" 
             className="h-12 w-auto flex-shrink-0"
           />
