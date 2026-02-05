@@ -1,4 +1,4 @@
-# BU Course Search - Backend
+# BU Course Search
 
 Fast course search and schedule building API for Boston University students.
 
