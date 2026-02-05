@@ -55,23 +55,23 @@ export function SubjectDropdown({ selected, onChange }: SubjectDropdownProps) {
       : `${selected.length} selected`;
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative w-full sm:w-auto">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors text-sm',
+          'flex items-center justify-between gap-2 w-full sm:w-auto px-3 py-2.5 sm:py-2 rounded-lg border transition-colors text-sm whitespace-nowrap min-h-[44px] sm:min-h-0',
           selected.length > 0
             ? 'border-bu-scarlet bg-bu-scarlet/10 text-bu-scarlet'
             : 'border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-primary)]'
         )}
       >
-        <span className="text-[var(--text-muted)] mr-1">Subject</span>
+        <span className="text-[var(--text-muted)]">Subject</span>
         <span className="font-medium">{displayValue}</span>
-        <ChevronDown className={cn('w-4 h-4 transition-transform', isOpen && 'rotate-180')} />
+        <ChevronDown className={cn('w-4 h-4 transition-transform flex-shrink-0', isOpen && 'rotate-180')} />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-1 w-[300px] max-h-[400px] rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] shadow-lg z-50 overflow-hidden">
+        <div className="absolute top-full left-0 right-0 sm:right-auto mt-1 min-w-[200px] sm:min-w-[300px] w-full sm:w-auto max-h-[70vh] sm:max-h-[400px] rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] shadow-lg z-50 overflow-hidden">
           {/* Search */}
           <div className="p-2 border-b border-[var(--border-color)]">
             <div className="relative">
