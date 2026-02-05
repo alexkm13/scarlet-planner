@@ -1,6 +1,12 @@
 import type { CourseResponse, SubjectsResponse, TermsResponse, HubUnitsResponse, Course, ScheduleResponse, AddCourseResponse } from '../types';
 
-const API_BASE = '/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL?.replace(/\/$/, '') || '';
+
+function apiUrl(path: string): string {
+  const base = API_BASE_URL || window.location.origin;
+  const p = path.startsWith('/') ? path : `/${path}`;
+  return `${base.replace(/\/$/, '')}${p}`;
+}
 
 interface SearchParams {
   q?: string;
@@ -14,7 +20,7 @@ interface SearchParams {
 }
 
 export async function searchCourses(params: SearchParams): Promise<CourseResponse> {
-  const url = new URL(`${API_BASE}/courses`, window.location.origin);
+  const url = new URL(apiUrl('/api/courses'));
   
   if (params.q) url.searchParams.set('q', params.q);
   if (params.limit) url.searchParams.set('limit', params.limit.toString());
@@ -37,7 +43,7 @@ export async function searchCourses(params: SearchParams): Promise<CourseRespons
 }
 
 export async function getCourse(courseId: string): Promise<Course> {
-  const response = await fetch(`${API_BASE}/courses/${encodeURIComponent(courseId)}`);
+  const response = await fetch(apiUrl(`/api/courses/${encodeURIComponent(courseId)}`));
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);
   }
@@ -45,7 +51,7 @@ export async function getCourse(courseId: string): Promise<Course> {
 }
 
 export async function getSubjects(): Promise<SubjectsResponse> {
-  const response = await fetch(`${API_BASE}/subjects`);
+  const response = await fetch(apiUrl('/api/subjects'));
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);
   }
@@ -53,7 +59,7 @@ export async function getSubjects(): Promise<SubjectsResponse> {
 }
 
 export async function getTerms(): Promise<TermsResponse> {
-  const response = await fetch(`${API_BASE}/terms`);
+  const response = await fetch(apiUrl('/api/terms'));
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);
   }
@@ -61,7 +67,7 @@ export async function getTerms(): Promise<TermsResponse> {
 }
 
 export async function getHubUnits(): Promise<HubUnitsResponse> {
-  const response = await fetch(`${API_BASE}/hub-units`);
+  const response = await fetch(apiUrl('/api/hub-units'));
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);
   }
@@ -71,7 +77,7 @@ export async function getHubUnits(): Promise<HubUnitsResponse> {
 // Schedule Builder API
 
 export async function getSchedule(): Promise<ScheduleResponse> {
-  const response = await fetch(`${API_BASE}/schedule`);
+  const response = await fetch(apiUrl('/api/schedule'));
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);
   }
@@ -79,7 +85,7 @@ export async function getSchedule(): Promise<ScheduleResponse> {
 }
 
 export async function addToSchedule(courseId: string): Promise<AddCourseResponse> {
-  const response = await fetch(`${API_BASE}/schedule/add`, {
+  const response = await fetch(apiUrl('/api/schedule/add'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ course_id: courseId }),
@@ -91,7 +97,7 @@ export async function addToSchedule(courseId: string): Promise<AddCourseResponse
 }
 
 export async function removeFromSchedule(courseId: string): Promise<{ success: boolean; schedule: ScheduleResponse }> {
-  const response = await fetch(`${API_BASE}/schedule/${encodeURIComponent(courseId)}`, {
+  const response = await fetch(apiUrl(`/api/schedule/${encodeURIComponent(courseId)}`), {
     method: 'DELETE',
   });
   if (!response.ok) {
@@ -101,7 +107,7 @@ export async function removeFromSchedule(courseId: string): Promise<{ success: b
 }
 
 export async function clearSchedule(): Promise<{ success: boolean; schedule: ScheduleResponse }> {
-  const response = await fetch(`${API_BASE}/schedule`, {
+  const response = await fetch(apiUrl('/api/schedule'), {
     method: 'DELETE',
   });
   if (!response.ok) {
@@ -116,7 +122,7 @@ export interface ScheduleExportResponse {
 }
 
 export async function exportSchedule(courseIds: string[]): Promise<ScheduleExportResponse> {
-  const response = await fetch(`${API_BASE}/schedule/export`, {
+  const response = await fetch(apiUrl('/api/schedule/export'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(courseIds),

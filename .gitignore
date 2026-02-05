@@ -12,7 +12,6 @@ env/
 *.egg-info/
 .eggs/
 *.egg
-.env.example
 
 # Build / dist
 dist/
@@ -47,6 +46,7 @@ Thumbs.db
 secrets/
 cookies.json
 cookies.txt
+deploy/
 
 # Test / coverage
 .coverage
@@ -57,6 +57,7 @@ htmlcov/
 coverage/
 *.cover
 .hypothesis/
+.env.example
 
 # Misc
 *.bak

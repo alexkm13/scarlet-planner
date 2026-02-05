@@ -129,6 +129,17 @@ Mount a custom `courses.json` with `-v /path/to/courses.json:/app/src/data/cours
 
 See `deploy/bu-courses.service.example`. Copy to `/etc/systemd/system/bu-courses.service`, set `WorkingDirectory`, `EnvironmentFile`, and `ExecStart` to your venv, then `systemctl enable --now bu-courses`.
 
+### GitHub Pages (frontend)
+
+The frontend deploys to GitHub Pages via the **Deploy frontend to GitHub Pages** workflow on push to `main`.
+
+1. **Repo variable**: In the repo go to **Settings → Secrets and variables → Actions**. Under **Variables**, add `VITE_API_URL` with your backend URL (e.g. `https://bu-course-api.onrender.com`). The built app uses this to call the API.
+2. **Enable Pages**: **Settings → Pages**. Under **Build and deployment**, set **Source** to **Deploy from a branch**, branch **gh-pages**, folder **/ (root)**.
+3. **Base path**: The workflow builds with `base: '/upgraded-bu-course-schedule/'` in `frontend/vite.config.ts`. If your repo name differs, change `base` to `'/your-repo-name/'`.
+4. **CORS**: On the backend (e.g. Render), set `CORS_ORIGINS` to your Pages URL, e.g. `https://alexkm13.github.io` or `https://alexkm13.github.io/upgraded-bu-course-schedule` (no trailing slash).
+
+After the workflow runs, the site is at `https://<user>.github.io/upgraded-bu-course-schedule/`.
+
 ### Design Decisions
 
 1. **In-memory search**: 7k courses × ~1KB = ~7MB. Trivial to keep in memory, avoids DB round-trips.
