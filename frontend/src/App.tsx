@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { Layers, List, PanelRightOpen, PanelRightClose } from 'lucide-react';
+import { Layers, PanelRightOpen, PanelRightClose } from 'lucide-react';
 import { Header } from './components/layout/Header';
 import { TermDropdown } from './components/filters/TermDropdown';
 import { StatusDropdown } from './components/filters/StatusDropdown';
