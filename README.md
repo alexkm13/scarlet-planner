@@ -1,8 +1,8 @@
-# BU Course Search
+# Scarlet Planner
 
 A fast course search and schedule builder for Boston University students. Search 7,000+ courses with fuzzy matching, filter by subject and Hub requirements, build your schedule with conflict detection, and export to Google Calendar or Apple Calendar.
 
-**[Live Demo](https://alexkm13.github.io/upgraded-bu-course-schedule/)** · [API Docs](https://upgraded-bu-course-schedule.onrender.com/docs)
+**[Live Demo](https://alexkm13.github.io/scarlet-planner/)** · [API Docs](https://upgraded-bu-course-schedule.onrender.com/docs)
 
 ## Features
 
