@@ -1,14 +1,15 @@
 import { useState, useMemo, useEffect } from 'react';
-import { Calendar, Download, Trash2 } from 'lucide-react';
+import { Calendar, Download, Trash2, X } from 'lucide-react';
 import { useSchedule } from '../../hooks/useSchedule';
 import { ScheduleCalendar } from './ScheduleCalendar';
 
 interface SelectedCoursesDrawerProps {
   isOpen: boolean;
+  onClose: () => void;
   onExport: () => void;
 }
 
-export function SelectedCoursesDrawer({ isOpen, onExport }: SelectedCoursesDrawerProps) {
+export function SelectedCoursesDrawer({ isOpen, onClose, onExport }: SelectedCoursesDrawerProps) {
   const { schedule, removeCourse } = useSchedule();
   const [showCalendar, setShowCalendar] = useState(false);
 
@@ -34,20 +35,42 @@ export function SelectedCoursesDrawer({ isOpen, onExport }: SelectedCoursesDrawe
   }, [terms, selectedTerm]);
 
   return (
-    <div
-      className={`
-        flex-shrink-0 bg-[var(--bg-primary)] border-l border-[var(--border-color)]
-        transition-[width] duration-300 ease-in-out overflow-hidden
-        ${isOpen ? 'w-[700px]' : 'w-0 border-0'}
-      `}
-    >
-      <div className="w-[700px] h-full flex flex-col">
-        <div className="flex flex-wrap items-center justify-between gap-3 p-4 flex-shrink-0">
-          <h2 className="text-lg font-semibold text-[var(--text-primary)]">
-            Selected Courses
-          </h2>
-          <div className="flex items-center gap-2">
-            <button
+    <>
+      {/* Mobile: backdrop (only when open) */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50 md:hidden animate-[fadeIn_150ms_ease-out]"
+          onClick={onClose}
+          aria-hidden
+        />
+      )}
+      {/* Drawer panel: full-screen on mobile, side panel on desktop */}
+      <div
+        className={`
+          fixed md:relative inset-y-0 right-0 z-50 md:z-auto
+          w-full max-w-[100vw] md:max-w-[420px] md:flex-shrink-0
+          bg-[var(--bg-primary)] border-l border-[var(--border-color)]
+          transition-[transform] duration-300 ease-in-out md:transition-[width] md:duration-300
+          flex flex-col
+          md:overflow-hidden
+          ${isOpen ? 'translate-x-0 md:w-[420px]' : 'translate-x-full md:translate-x-0 md:w-0 md:border-0'}
+        `}
+      >
+        <div className="w-full md:w-[420px] h-full flex flex-col min-w-0">
+          <div className="flex flex-wrap items-center justify-between gap-3 p-4 flex-shrink-0 border-b border-[var(--border-color)] md:border-b-0">
+            <h2 className="text-lg font-semibold text-[var(--text-primary)]">
+              Selected Courses
+            </h2>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={onClose}
+                className="p-2 rounded-lg md:hidden border border-[var(--border-color)] hover:bg-[var(--bg-secondary)]"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5 text-[var(--text-muted)]" />
+              </button>
+              <button
               type="button"
               onClick={() => setShowCalendar(!showCalendar)}
               className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border text-xs transition-colors ${
@@ -67,8 +90,8 @@ export function SelectedCoursesDrawer({ isOpen, onExport }: SelectedCoursesDrawe
               <Download className="w-3.5 h-3.5" />
               Export
             </button>
+            </div>
           </div>
-        </div>
 
         <div className="flex-1 min-h-0 overflow-y-auto px-4 pb-4">
           {showCalendar && hasCourses && (
@@ -119,5 +142,6 @@ export function SelectedCoursesDrawer({ isOpen, onExport }: SelectedCoursesDrawe
         </div>
       </div>
     </div>
+    </>
   );
 }

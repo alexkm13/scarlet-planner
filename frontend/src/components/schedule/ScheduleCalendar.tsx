@@ -163,9 +163,9 @@ export function ScheduleCalendar({
         )}
       </div>
 
-      <div className="border border-[var(--border-color)] rounded-b-lg overflow-hidden">
-        <div className="flex border-b border-[var(--border-color)] bg-[var(--bg-primary)]">
-          <div className="flex-shrink-0 w-12 border-r border-[var(--border-color)]" />
+      <div className="border border-[var(--border-color)] rounded-b-lg overflow-x-auto overflow-y-hidden">
+        <div className="flex border-b border-[var(--border-color)] bg-[var(--bg-primary)] min-w-[320px]">
+          <div className="flex-shrink-0 w-10 sm:w-12 border-r border-[var(--border-color)]" />
           {DAYS.map((day, i) => (
             <div
               key={day}
@@ -176,8 +176,8 @@ export function ScheduleCalendar({
           ))}
         </div>
 
-        <div className="flex">
-          <div className="flex-shrink-0 w-12 border-r border-[var(--border-color)]">
+        <div className="flex min-w-[320px]">
+          <div className="flex-shrink-0 w-10 sm:w-12 border-r border-[var(--border-color)]">
             {hours.map((hour) => (
               <div
                 key={hour}

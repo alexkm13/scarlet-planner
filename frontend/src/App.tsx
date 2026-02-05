@@ -148,10 +148,10 @@ function App() {
           onSearchChange={setSearchInput}
         />
         
-        <main className="flex-1 overflow-y-auto px-4 py-6">
+        <main className="flex-1 overflow-y-auto px-3 py-4 sm:px-4 sm:py-6">
           <div className="max-w-7xl mx-auto">
           {/* Filters row 1 */}
-          <div className="flex flex-wrap items-center gap-3 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-wrap items-stretch gap-2 sm:gap-3 mb-4">
             <TermDropdown
               selected={filters.term}
               onChange={(value) => updateFilter('term', value)}
@@ -167,7 +167,7 @@ function App() {
           </div>
 
           {/* Day filter and sort */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
             <DayFilter
               selected={filters.days}
               onChange={(value) => updateFilter('days', value)}
@@ -176,7 +176,7 @@ function App() {
           </div>
 
           {/* Results info and view toggle */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
             <p className="text-sm text-[var(--text-muted)]">
               {isLoading ? 'Loading...' : `${data?.total ?? 0} courses found`}
               {(() => {
@@ -184,39 +184,30 @@ function App() {
                 return ms != null ? <span className="ml-2">({Math.round(ms)}ms)</span> : null;
               })()}
             </p>
-            
+
             <div className="flex items-center gap-2">
               {/* Group/Flatten toggle */}
               <button
                 onClick={() => setGrouped(!grouped)}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm border border-[var(--border-color)] hover:border-bu-scarlet hover:text-bu-scarlet transition-colors"
+                className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-2 sm:px-3 sm:py-1.5 rounded-lg text-sm border border-[var(--border-color)] hover:border-bu-scarlet hover:text-bu-scarlet transition-colors min-h-[44px] sm:min-h-0"
                 title={grouped ? "Show all sections (flat view)" : "Group sections under courses"}
               >
-                {grouped ? (
-                  <>
-                    <Layers className="w-4 h-4" />
-                    <span>Grouped</span>
-                  </>
-                ) : (
-                  <>
-                    <List className="w-4 h-4" />
-                    <span>Flat</span>
-                  </>
-                )}
+                <Layers className="w-4 h-4 flex-shrink-0" />
+                <span className="hidden sm:inline">Grouped</span>
               </button>
 
               {/* Selected courses drawer toggle */}
               <button
                 onClick={() => setDrawerOpen(!drawerOpen)}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm border border-[var(--border-color)] hover:border-bu-scarlet hover:text-bu-scarlet transition-colors"
+                className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-2 sm:px-3 sm:py-1.5 rounded-lg text-sm border border-[var(--border-color)] hover:border-bu-scarlet hover:text-bu-scarlet transition-colors min-h-[44px] sm:min-h-0"
                 title={drawerOpen ? "Hide selected courses" : "Show selected courses"}
               >
                 {drawerOpen ? (
-                  <PanelRightClose className="w-4 h-4" />
+                  <PanelRightClose className="w-4 h-4 flex-shrink-0" />
                 ) : (
-                  <PanelRightOpen className="w-4 h-4" />
+                  <PanelRightOpen className="w-4 h-4 flex-shrink-0" />
                 )}
-                <span>Selected</span>
+                <span className="hidden sm:inline">Selected</span>
                 {schedule.course_count > 0 && (
                   <span className="bg-bu-scarlet text-white text-xs px-1.5 py-0.5 rounded-full">
                     {schedule.course_count}
@@ -250,6 +241,20 @@ function App() {
               />
             </div>
           )}
+
+          {/* Footer */}
+          <footer className="mt-12 pt-6 pb-8 border-t border-[var(--border-color)] text-center text-sm text-[var(--text-muted)] space-y-2">
+            <p>
+              <span className="font-medium text-[var(--text-primary)]">Scarlet Planner</span> v1 by Alex Kim
+            </p>
+            <p>
+              Not affiliated with Boston University. Get in{' '}
+              <a href="mailto:alexmk@bu.edu" className="text-bu-scarlet underline hover:underline focus:outline-none focus:underline align-baseline [vertical-align:-0.06em]">contact</a>.
+            </p>
+            <p>
+              If this helped you save a few hours and find some better courses, tell a friend about it!
+            </p>
+          </footer>
           </div>
         </main>
       </div>
@@ -257,6 +262,7 @@ function App() {
       {/* Right side drawer */}
       <SelectedCoursesDrawer
         isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
         onExport={handleExport}
       />
 

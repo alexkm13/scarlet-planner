@@ -33,11 +33,11 @@ export function Dropdown({ label, value, children, displayValue }: DropdownProps
   );
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative w-full sm:w-auto">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors text-sm whitespace-nowrap',
+          'flex items-center justify-between gap-2 w-full sm:w-auto px-3 py-2.5 sm:py-2 rounded-lg border transition-colors text-sm whitespace-nowrap min-h-[44px] sm:min-h-0',
           hasValue
             ? 'border-bu-scarlet bg-bu-scarlet/10 text-bu-scarlet'
             : 'border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-primary)]'
@@ -49,7 +49,7 @@ export function Dropdown({ label, value, children, displayValue }: DropdownProps
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-1 min-w-[200px] max-h-[300px] overflow-y-auto rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] shadow-lg z-50">
+        <div className="absolute top-full left-0 right-0 sm:right-auto mt-1 min-w-[200px] sm:min-w-[200px] w-full sm:w-auto max-h-[70vh] sm:max-h-[300px] overflow-y-auto rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] shadow-lg z-50">
           {children}
         </div>
       )}

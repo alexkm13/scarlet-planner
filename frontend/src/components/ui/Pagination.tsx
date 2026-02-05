@@ -42,12 +42,12 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
   };
 
   return (
-    <div className="flex items-center justify-center gap-1">
+    <div className="flex items-center justify-center gap-1 flex-wrap">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className={cn(
-          'p-2 rounded-lg transition-colors',
+          'p-2 rounded-lg transition-colors min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 flex items-center justify-center',
           currentPage === 1
             ? 'text-[var(--text-muted)] cursor-not-allowed'
             : 'text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]'
@@ -66,7 +66,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
             key={page}
             onClick={() => onPageChange(page)}
             className={cn(
-              'w-10 h-10 rounded-lg font-medium transition-colors',
+              'min-w-[44px] min-h-[44px] w-10 h-10 rounded-lg font-medium transition-colors flex items-center justify-center',
               page === currentPage
                 ? 'bg-bu-scarlet text-white'
                 : 'text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]'
@@ -81,7 +81,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         className={cn(
-          'p-2 rounded-lg transition-colors',
+          'p-2 rounded-lg transition-colors min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 flex items-center justify-center',
           currentPage === totalPages
             ? 'text-[var(--text-muted)] cursor-not-allowed'
             : 'text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]'
