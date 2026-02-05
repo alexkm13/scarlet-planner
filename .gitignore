@@ -12,6 +12,7 @@ env/
 *.egg-info/
 .eggs/
 *.egg
+.env.example
 
 # Build / dist
 dist/
