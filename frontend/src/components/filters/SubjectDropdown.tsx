@@ -65,8 +65,8 @@ export function SubjectDropdown({ selected, onChange }: SubjectDropdownProps) {
             : 'border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-primary)]'
         )}
       >
-        <span className="text-[var(--text-muted)]">Subject</span>
-        <span className="font-medium">{displayValue}</span>
+        <span className="text-[var(--text-muted)] min-w-[4.5rem] sm:min-w-0 shrink-0">Subject</span>
+        <span className="flex-1 text-center font-medium">{displayValue}</span>
         <ChevronDown className={cn('w-4 h-4 transition-transform flex-shrink-0', isOpen && 'rotate-180')} />
       </button>
 

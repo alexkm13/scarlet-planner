@@ -227,9 +227,9 @@ export function ScheduleCalendar({
                       padding: isSmallBlock ? '2px 4px' : '6px 8px',
                     }}
                   >
-                    <div className={`font-bold leading-tight break-words ${isSmallBlock ? 'text-[8px]' : 'text-[11px]'}`}>{event.course_code}</div>
-                    <div className={`opacity-90 leading-tight break-words ${isSmallBlock ? 'text-[8px]' : 'text-[10px]'}`}>{event.start_time} – {event.end_time}</div>
-                    <div className={`opacity-90 leading-tight break-words ${isSmallBlock ? 'text-[8px]' : 'text-[10px]'}`}>{formatLocation(event.location)}</div>
+                    <div className="font-bold leading-tight break-words text-[11px]">{event.course_code}</div>
+                    <div className="opacity-90 leading-tight break-words text-[10px]">{event.start_time} – {event.end_time}</div>
+                    <div className="opacity-90 leading-tight break-words text-[10px]">{formatLocation(event.location)}</div>
                   </div>
                 );
               })}

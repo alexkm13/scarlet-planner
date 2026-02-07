@@ -90,6 +90,35 @@ class TestCourseSearchEndpoint:
             assert course["term"] == "Fall 2025"
 
 
+class TestCourseBatchEndpoint:
+    """Tests for /api/courses/batch endpoint."""
+
+    def test_get_courses_batch(self, test_client):
+        response = test_client.get(
+            "/api/courses/batch?id=CAS-CS-111-A1-Fall2025&id=CAS-CS-112-A1-Fall2025"
+        )
+        assert response.status_code == 200
+        data = response.json()
+        assert isinstance(data, list)
+        assert len(data) == 2
+        ids = {c["id"] for c in data}
+        assert "CAS-CS-111-A1-Fall2025" in ids
+        assert "CAS-CS-112-A1-Fall2025" in ids
+
+    def test_get_courses_batch_empty(self, test_client):
+        response = test_client.get("/api/courses/batch")
+        assert response.status_code == 422  # Missing required query param
+
+    def test_get_courses_batch_unknown_id(self, test_client):
+        response = test_client.get(
+            "/api/courses/batch?id=CAS-CS-111-A1-Fall2025&id=FAKE-ID"
+        )
+        assert response.status_code == 200
+        data = response.json()
+        assert len(data) == 1
+        assert data[0]["id"] == "CAS-CS-111-A1-Fall2025"
+
+
 class TestCourseDetailEndpoint:
     """Tests for /api/courses/{course_id} endpoint."""
     

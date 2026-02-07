@@ -12,11 +12,9 @@ from fastapi.responses import RedirectResponse
 
 from src.models import (
     CourseResponse, GroupedCourseResponse, SubjectsResponse, TermsResponse,
-    ScheduleValidation, ScheduleExport,
-    ScheduleResponse, ScheduleCourse, ScheduleEvent, ScheduleConflictInfo, AddCourseRequest, AddCourseResponse,
+    ScheduleValidation,
 )
 from src.config import CORS_ORIGINS, HOST, PORT, RELOAD
-from src.schedule_builder import ScheduleBuilder
 from src.search import CourseIndex
 from src.data_loader import load_courses
 from src.rmp import rmp_client
@@ -29,7 +27,6 @@ logger = setup_logger(__name__)
 # Global instances - loaded once at startup
 course_index: CourseIndex | None = None
 enrichment_service: EnrichmentService | None = None
-schedule_builder: ScheduleBuilder = ScheduleBuilder()  # Single-user local app
 
 
 @asynccontextmanager
@@ -125,6 +122,15 @@ async def search_courses(
             total=len(results),
             query_time_ms=round(query_time_ms, 2),
         )
+
+
+@app.get("/api/courses/batch")
+async def get_courses_batch(id: list[str] = Query(..., description="Course IDs")):
+    """Fetch multiple courses by ID. Used for loading schedule from localStorage."""
+    courses = [course_index.get_by_id(cid) for cid in id]
+    courses = [c for c in courses if c is not None]
+    enriched = enrichment_service.enrich_courses(courses)
+    return enriched
 
 
 @app.get("/api/courses/{course_id}")
@@ -228,111 +234,6 @@ async def get_professors_ratings(names: list[str] = Query(..., description="List
     return {"ratings": results}
 
 
-# === Schedule Builder Endpoints ===
-
-def _build_schedule_response() -> ScheduleResponse:
-    """Helper to build ScheduleResponse from current schedule."""
-    data = schedule_builder.to_dict()
-    return ScheduleResponse(
-        courses=[ScheduleCourse(**c) for c in data["courses"]],
-        events=[ScheduleEvent(**e) for e in data["events"]],
-        conflicts=[ScheduleConflictInfo(**c) for c in data["conflicts"]],
-        total_credits=data["total_credits"],
-        course_count=data["course_count"],
-        has_conflicts=data["has_conflicts"],
-    )
-
-
-@app.get("/api/schedule", response_model=ScheduleResponse)
-async def get_schedule():
-    """
-    Get the current schedule with all events and conflicts.
-    """
-    return _build_schedule_response()
-
-
-@app.post("/api/schedule/add", response_model=AddCourseResponse)
-async def add_to_schedule(request: AddCourseRequest):
-    """
-    Add a course to the schedule.
-
-    Returns the updated schedule and any new conflicts created.
-    """
-    course = course_index.get_by_id(request.course_id)
-    if not course:
-        raise HTTPException(status_code=404, detail=f"Course not found: {request.course_id}")
-
-    # Enrich with professor rating
-    enriched = enrichment_service.enrich_courses([course])
-    course = enriched[0]
-
-    # Add to schedule and get conflicts
-    conflicts = schedule_builder.add_course(course)
-
-    new_conflicts = [
-        ScheduleConflictInfo(
-            course1_id=c.event1.course_id,
-            course1_code=c.event1.course_code,
-            course2_id=c.event2.course_id,
-            course2_code=c.event2.course_code,
-            day=c.day,
-            overlap_minutes=c.overlap_duration,
-        )
-        for c in conflicts
-    ]
-
-    return AddCourseResponse(
-        success=True,
-        schedule=_build_schedule_response(),
-        new_conflicts=new_conflicts,
-    )
-
-
-@app.delete("/api/schedule/{course_id}")
-async def remove_from_schedule(course_id: str):
-    """
-    Remove a course from the schedule.
-    """
-    success = schedule_builder.remove_course(course_id)
-    return {
-        "success": success,
-        "schedule": _build_schedule_response(),
-    }
-
-
-@app.delete("/api/schedule")
-async def clear_schedule():
-    """
-    Clear all courses from the schedule.
-    """
-    schedule_builder.clear()
-    return {
-        "success": True,
-        "schedule": _build_schedule_response(),
-    }
-
-
-@app.post("/api/schedule/bulk")
-async def set_schedule(course_ids: list[str]):
-    """
-    Set the schedule to a specific list of courses (replaces existing).
-    """
-    schedule_builder.clear()
-
-    # Batch lookup all courses at once
-    courses = [course_index.get_by_id(cid) for cid in course_ids]
-    courses = [c for c in courses if c is not None]
-
-    # Batch enrich all courses
-    enriched = enrichment_service.enrich_courses(courses)
-
-    # Add all to schedule
-    for course in enriched:
-        schedule_builder.add_course(course)
-
-    return _build_schedule_response()
-
-
 @app.get("/health")
 async def health_check():
     """Health check endpoint."""
@@ -340,7 +241,6 @@ async def health_check():
         "status": "healthy",
         "courses_loaded": course_index.total_courses if course_index else 0,
         "rmp_cache": rmp_client.cache_stats(),
-        "schedule_courses": schedule_builder.course_count,
     }
 
 

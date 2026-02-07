@@ -11,8 +11,7 @@ import { CourseModal } from './components/courses/CourseModal';
 import { Pagination } from './components/ui/Pagination';
 import { SelectedCoursesDrawer } from './components/schedule/SelectedCoursesDrawer';
 import { useCourses } from './hooks/useCourses';
-import { useSchedule } from './hooks/useSchedule';
-import { exportSchedule } from './api/client';
+import { useLocalSchedule } from './hooks/useLocalSchedule';
 import type { Course, SortOption, Filters, Meeting } from './types';
 
 const ITEMS_PER_PAGE = 50;
@@ -55,7 +54,7 @@ function App() {
   const [grouped, setGrouped] = useState(true);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { schedule } = useSchedule();
+  const { schedule, handleExport } = useLocalSchedule();
 
   // Debounce search input
   useEffect(() => {
@@ -121,23 +120,6 @@ function App() {
   }, []);
 
   const totalPages = Math.ceil((data?.total ?? 0) / ITEMS_PER_PAGE);
-
-  const handleExport = async () => {
-    const courseIds = schedule.courses.map((c) => c.id);
-    if (courseIds.length === 0) return;
-    try {
-      const { ics, filename } = await exportSchedule(courseIds);
-      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      a.click();
-      URL.revokeObjectURL(url);
-    } catch (e) {
-      console.error('Export failed:', e);
-    }
-  };
 
   return (
     <div className="h-screen bg-[var(--bg-primary)] flex overflow-hidden">

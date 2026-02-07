@@ -1,4 +1,4 @@
-import type { CourseResponse, SubjectsResponse, TermsResponse, HubUnitsResponse, Course, ScheduleResponse, AddCourseResponse } from '../types';
+import type { CourseResponse, SubjectsResponse, TermsResponse, HubUnitsResponse, Course } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL?.replace(/\/$/, '') || '';
 
@@ -50,6 +50,18 @@ export async function getCourse(courseId: string): Promise<Course> {
   return response.json();
 }
 
+/** Fetch multiple courses by ID. Used for loading schedule from localStorage. */
+export async function getCoursesBatch(courseIds: string[]): Promise<Course[]> {
+  if (courseIds.length === 0) return [];
+  const params = new URLSearchParams();
+  courseIds.forEach((id) => params.append('id', id));
+  const response = await fetch(apiUrl(`/api/courses/batch?${params.toString()}`));
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+  return response.json();
+}
+
 export async function getSubjects(): Promise<SubjectsResponse> {
   const response = await fetch(apiUrl('/api/subjects'));
   if (!response.ok) {
@@ -74,47 +86,7 @@ export async function getHubUnits(): Promise<HubUnitsResponse> {
   return response.json();
 }
 
-// Schedule Builder API
-
-export async function getSchedule(): Promise<ScheduleResponse> {
-  const response = await fetch(apiUrl('/api/schedule'));
-  if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
-  }
-  return response.json();
-}
-
-export async function addToSchedule(courseId: string): Promise<AddCourseResponse> {
-  const response = await fetch(apiUrl('/api/schedule/add'), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ course_id: courseId }),
-  });
-  if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
-  }
-  return response.json();
-}
-
-export async function removeFromSchedule(courseId: string): Promise<{ success: boolean; schedule: ScheduleResponse }> {
-  const response = await fetch(apiUrl(`/api/schedule/${encodeURIComponent(courseId)}`), {
-    method: 'DELETE',
-  });
-  if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
-  }
-  return response.json();
-}
-
-export async function clearSchedule(): Promise<{ success: boolean; schedule: ScheduleResponse }> {
-  const response = await fetch(apiUrl('/api/schedule'), {
-    method: 'DELETE',
-  });
-  if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
-  }
-  return response.json();
-}
+// Schedule export (stateless - takes course IDs)
 
 export interface ScheduleExportResponse {
   ics: string;

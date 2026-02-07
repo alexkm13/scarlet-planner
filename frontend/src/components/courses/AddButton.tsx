@@ -1,12 +1,12 @@
 import { Plus, Minus } from 'lucide-react';
-import { useSchedule } from '../../hooks/useSchedule';
+import { useLocalSchedule } from '../../hooks/useLocalSchedule';
 
 interface AddButtonProps {
   courseId: string;
 }
 
 export function AddButton({ courseId }: AddButtonProps) {
-  const { addCourse, removeCourse, isInSchedule } = useSchedule();
+  const { addCourse, removeCourse, isInSchedule } = useLocalSchedule();
   const inSchedule = isInSchedule(courseId);
 
   const handleClick = async (e: React.MouseEvent) => {
