@@ -89,6 +89,30 @@ class TestCourseSearchEndpoint:
             assert course["status"] == "Open"
             assert course["term"] == "Fall 2025"
 
+    def test_search_department_alias_math(self, test_client):
+        """q=math resolves to subject MA (Mathematics)."""
+        response = test_client.get("/api/courses?q=math")
+        assert response.status_code == 200
+        data = response.json()
+        for course in data["courses"]:
+            assert course["department"] == "MA"
+
+    def test_search_department_code_ma(self, test_client):
+        """q=MA resolves to subject MA."""
+        response = test_client.get("/api/courses?q=MA")
+        assert response.status_code == 200
+        data = response.json()
+        for course in data["courses"]:
+            assert course["department"] == "MA"
+
+    def test_search_course_code_cs411(self, test_client):
+        """q=CS411 finds CS 411 course."""
+        response = test_client.get("/api/courses?q=CS411")
+        assert response.status_code == 200
+        data = response.json()
+        assert len(data["courses"]) >= 1
+        assert any("411" in c["code"] and c["department"] == "CS" for c in data["courses"])
+
 
 class TestCourseBatchEndpoint:
     """Tests for /api/schedule/courses endpoint."""

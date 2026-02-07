@@ -80,6 +80,27 @@ def sample_courses() -> list[Course]:
             class_nbr=12347,
         ),
         Course(
+            id="CAS-CS-411-A1-Fall2025",
+            code="CAS CS 411",
+            title="Software Engineering",
+            description="Software engineering principles.",
+            section="A1",
+            professor="Alice Brown",
+            term="Fall 2025",
+            credits=4,
+            hub_units=[],
+            department="CS",
+            college="CAS",
+            schedule=[
+                Meeting(days="TuTh", start_time="2:00 PM", end_time="3:15 PM", location="CAS 216")
+            ],
+            status="Open",
+            enrollment_cap=60,
+            enrollment_total=45,
+            section_type="Lecture",
+            class_nbr=12348,
+        ),
+        Course(
             id="CAS-CS-111-A1-Spring2026",
             code="CAS CS 111",
             title="Introduction to Computer Science",

@@ -16,6 +16,7 @@ from src.models import (
 )
 from src.config import CORS_ORIGINS, HOST, PORT, RELOAD
 from src.search import CourseIndex
+from src.utils.departments import resolve_department_query
 from src.data_loader import load_courses
 from src.rmp import rmp_client
 from src.services.enrichment import EnrichmentService
@@ -92,16 +93,28 @@ async def search_courses(
     Set grouped=false to get flat list of all sections.
     """
     start = time.perf_counter()
-    
+
+    # Resolve department name/acronym in query (e.g. "math" or "MA" -> subject filter)
+    search_query = q.strip()
+    subject_list = list(subject)
+    resolved = resolve_department_query(search_query)
+    if resolved:
+        subj_codes, remaining = resolved
+        subject_list = list(set(subject_list) | set(subj_codes))
+        search_query = remaining
+        # Department-only browse: use higher limit so user sees more results
+        if not search_query:
+            limit = max(limit, 500)
+
     # Build filters dict, excluding empty lists
     filters = {k: v for k, v in {
-        "subject": subject, "term": term, "hub": hub, "status": status
+        "subject": subject_list, "term": term, "hub": hub, "status": status
     }.items() if v}
-    
+
     if grouped:
         # Return grouped courses with related sections
         results, total = course_index.search_grouped(
-            query=q, limit=limit, offset=offset, **filters
+            query=search_query, limit=limit, offset=offset, **filters
         )
         results = enrichment_service.enrich_grouped_courses(results)
         query_time_ms = (time.perf_counter() - start) * 1000
@@ -113,7 +126,7 @@ async def search_courses(
         )
     else:
         # Return flat list of all sections
-        results = course_index.search(query=q, limit=limit, **filters)
+        results = course_index.search(query=search_query, limit=limit, **filters)
         results = enrichment_service.enrich_courses(results)
         query_time_ms = (time.perf_counter() - start) * 1000
 

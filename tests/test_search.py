@@ -68,10 +68,11 @@ class TestBitmapIndex:
     def test_filter_by_subject(self, index_with_courses):
         idx, courses = index_with_courses
         result = idx.filter(subject=["CS"])
-        # Should match CS courses (indices 0, 1, 3)
+        # Should match CS courses (indices 0, 1, 3, 4)
         assert 0 in result
         assert 1 in result
         assert 3 in result
+        assert 4 in result
         assert 2 not in result  # MA course
     
     def test_filter_by_term(self, index_with_courses):
@@ -81,7 +82,8 @@ class TestBitmapIndex:
         assert 0 in result
         assert 1 in result
         assert 2 in result
-        assert 3 not in result  # Spring 2026
+        assert 3 in result  # CS 411 Fall 2025
+        assert 4 not in result  # Spring 2026
     
     def test_filter_by_status(self, index_with_courses):
         idx, courses = index_with_courses
@@ -89,23 +91,25 @@ class TestBitmapIndex:
         assert 0 in result
         assert 1 in result
         assert 3 in result
+        assert 4 in result
         assert 2 not in result  # Closed
     
     def test_filter_multiple_subjects(self, index_with_courses):
         """Multiple values for same filter use OR logic."""
         idx, courses = index_with_courses
         result = idx.filter(subject=["CS", "MA"])
-        # Should match all courses
-        assert len(result) == 4
+        # Should match all courses (CS and MA)
+        assert len(result) == 5
     
     def test_filter_combined(self, index_with_courses):
         """Different filters use AND logic."""
         idx, courses = index_with_courses
         result = idx.filter(subject=["CS"], status=["Open"])
-        # CS AND Open = indices 0, 1, 3
+        # CS AND Open = indices 0, 1, 3, 4
         assert 0 in result
         assert 1 in result
         assert 3 in result
+        assert 4 in result
         assert 2 not in result
     
     def test_filter_no_match(self, index_with_courses):
@@ -182,7 +186,7 @@ class TestCourseIndex:
         assert "Spring 2026" in terms
     
     def test_total_courses(self, course_index):
-        assert course_index.total_courses == 4
+        assert course_index.total_courses == 5
 
 
 class TestConflictDetection:

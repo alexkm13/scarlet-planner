@@ -19,6 +19,7 @@ from typing import Callable
 from src.models import Course, Conflict, GroupedCourse, RelatedSection
 from src.utils.parsing import parse_time_to_minutes, parse_days_to_set
 from src.utils.constants import PRIMARY_SECTION_TYPES, SECONDARY_SECTION_TYPES
+from src.utils.departments import get_department_name, resolve_department_query
 from src.utils.logger import setup_logger
 
 from pyroaring import BitMap
@@ -176,8 +177,13 @@ class CourseIndex:
         self.courses = courses
         self.by_id: dict[str, Course] = {c.id: c for c in courses}
         
-        # Pre-compute search texts (avoid property calls during search)
-        self.search_texts: list[str] = [c.search_text for c in courses]
+        # Pre-compute search texts: base + department name + compressed code (for CS411-style lookup)
+        self.search_texts: list[str] = []
+        for c in courses:
+            base = c.search_text
+            dept_name = get_department_name(c.department)
+            compressed_code = c.code.replace(" ", "").lower()
+            self.search_texts.append(f"{base} {dept_name} {compressed_code}")
         
         # Build optimized indices
         self._build_indices()
