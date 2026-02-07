@@ -46,6 +46,7 @@ Thumbs.db
 secrets/
 cookies.json
 cookies.txt
+scrape_courses
 deploy/
 
 # Test / coverage
