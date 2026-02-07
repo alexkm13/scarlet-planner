@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 from src.models import Course
-from src.config import EXCLUDED_TERMS, COURSES_JSON_PATH
+from src.config import EXCLUDED_TERMS, DISPLAY_TERMS, COURSES_JSON_PATH
 from src.utils.logger import setup_logger
 
 logger = setup_logger(__name__)
@@ -35,10 +35,16 @@ def load_courses(path: str | Path | None = None) -> list[Course]:
 
     courses = []
     skipped_count = 0
+    allowed_terms = set(DISPLAY_TERMS)
     for item in data:
         try:
+            term = item.get("term", "")
             # Skip excluded terms (e.g., Summer terms)
-            if item.get("term") in EXCLUDED_TERMS:
+            if term in EXCLUDED_TERMS:
+                skipped_count += 1
+                continue
+            # Only include Fall 2025 and Spring 2026
+            if term not in allowed_terms:
                 skipped_count += 1
                 continue
             course = Course(**item)

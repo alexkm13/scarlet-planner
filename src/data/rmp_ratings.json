@@ -320,6 +320,14 @@
     "would_take_again": 100,
     "rmp_id": "2619559"
   },
+  "alexis peri": {
+    "name": "Alexis Peri",
+    "rating": 4.5,
+    "num_ratings": 22,
+    "difficulty": 3.6,
+    "would_take_again": 80.9524,
+    "rmp_id": "2060376"
+  },
   "ali nahvi": null,
   "aliaksandra kiniova": null,
   "alice cronin-golomb": {
@@ -372,6 +380,7 @@
     "would_take_again": 66.6667,
     "rmp_id": "1096137"
   },
+  "allegra goodman": null,
   "allison beauregard": null,
   "allison blyler": {
     "name": "Allison Blyler",
@@ -388,6 +397,14 @@
     "difficulty": 0,
     "would_take_again": -1,
     "rmp_id": "3100887"
+  },
+  "allison mcdonald": {
+    "name": "Allison McDonald",
+    "rating": 3.4,
+    "num_ratings": 16,
+    "difficulty": 3.2,
+    "would_take_again": 62.5,
+    "rmp_id": "2881344"
   },
   "allison miracco": {
     "name": "Allison Miracco",
@@ -418,6 +435,7 @@
   },
   "alyssa boucher": null,
   "alyssa graber": null,
+  "alyssa hunziker": null,
   "alyssa pierson": {
     "name": "Alyssa Pierson",
     "rating": 0,
@@ -514,6 +532,14 @@
   "anamika dutta": null,
   "anand sahu": null,
   "anastasiia novikova": null,
+  "anat keinan": {
+    "name": "Anat Keinan",
+    "rating": 5,
+    "num_ratings": 1,
+    "difficulty": 3,
+    "would_take_again": 100,
+    "rmp_id": "2796540"
+  },
   "anatoli polkovnikov": {
     "name": "Anatoli Polkovnikov",
     "rating": 2.1,
@@ -555,6 +581,14 @@
     "difficulty": 2.8,
     "would_take_again": 40,
     "rmp_id": "1632932"
+  },
+  "andrea cohen": {
+    "name": "Elizabeth Cohen",
+    "rating": 4,
+    "num_ratings": 6,
+    "difficulty": 2.2,
+    "would_take_again": 83.3333,
+    "rmp_id": "3064774"
   },
   "andrea lincoln": {
     "name": "Andrea Lincoln",
@@ -818,6 +852,7 @@
     "would_take_again": 100,
     "rmp_id": "975144"
   },
+  "annaka saari": null,
   "anne danehy": {
     "name": "Anne Danehy",
     "rating": 4.1,
@@ -879,6 +914,7 @@
     "rmp_id": "3133633"
   },
   "anthony linn": null,
+  "anthony rosellini": null,
   "anthony yacovone": null,
   "anushka bharwani": null,
   "anushya chandran": {
@@ -916,10 +952,10 @@
   },
   "april yue": {
     "name": "April Yue",
-    "rating": 0,
-    "num_ratings": 0,
-    "difficulty": 0,
-    "would_take_again": -1,
+    "rating": 5,
+    "num_ratings": 1,
+    "difficulty": 2,
+    "would_take_again": 100,
     "rmp_id": "3101017"
   },
   "ara sarkissian": {
@@ -963,6 +999,14 @@
     "rmp_id": "282767"
   },
   "arianna james": null,
+  "arianne chernock": {
+    "name": "Arianne Chernock",
+    "rating": 4.4,
+    "num_ratings": 33,
+    "difficulty": 3,
+    "would_take_again": 88.8889,
+    "rmp_id": "989115"
+  },
   "arjun vishwanath": null,
   "artem vyshinskiy": null,
   "arthur lee": {
@@ -1042,6 +1086,14 @@
     "would_take_again": -1,
     "rmp_id": "3049727"
   },
+  "austin lee": {
+    "name": "Heeju Lee",
+    "rating": 4.1,
+    "num_ratings": 9,
+    "difficulty": 2.9,
+    "would_take_again": 77.7778,
+    "rmp_id": "2484669"
+  },
   "avi mohan": {
     "name": "Avi Mohan",
     "rating": 5,
@@ -1058,6 +1110,7 @@
     "would_take_again": 31.0345,
     "rmp_id": "487976"
   },
+  "ayn yeagle": null,
   "ayse bekar": null,
   "ayse coskun": {
     "name": "Ayse Coskun",
@@ -1126,6 +1179,7 @@
     "would_take_again": 92.3077,
     "rmp_id": "2618579"
   },
+  "begum ergun": null,
   "behdad shahossini": {
     "name": "Behdad Shahossini",
     "rating": 4.2,
@@ -1141,6 +1195,14 @@
     "difficulty": 2.9,
     "would_take_again": 33.3333,
     "rmp_id": "942130"
+  },
+  "bene' cruz": {
+    "name": "Carlos Cruz",
+    "rating": 4.8,
+    "num_ratings": 18,
+    "difficulty": 1.6,
+    "would_take_again": 100,
+    "rmp_id": "2594023"
   },
   "benjamin crowe": {
     "name": "Benjamin Crowe",
@@ -1226,9 +1288,9 @@
   },
   "bjoern reinhard": {
     "name": "Bjorn Reinhard",
-    "rating": 2.3,
-    "num_ratings": 42,
-    "difficulty": 4.2,
+    "rating": 2.2,
+    "num_ratings": 43,
+    "difficulty": 4.1,
     "would_take_again": 0,
     "rmp_id": "1322989"
   },
@@ -1489,6 +1551,14 @@
     "would_take_again": 0,
     "rmp_id": "1670852"
   },
+  "carla kath": {
+    "name": "Carla Kath",
+    "rating": 5,
+    "num_ratings": 3,
+    "difficulty": 2,
+    "would_take_again": 100,
+    "rmp_id": "3044735"
+  },
   "carlos casso dominguez": {
     "name": "Carlos Dominguez",
     "rating": 3.4,
@@ -1547,6 +1617,14 @@
     "would_take_again": 79.1667,
     "rmp_id": "472269"
   },
+  "carrie preston": {
+    "name": "Carrie Preston",
+    "rating": 4.3,
+    "num_ratings": 17,
+    "difficulty": 3.4,
+    "would_take_again": 50,
+    "rmp_id": "932170"
+  },
   "carrie sheehan": {
     "name": "Andrew Sheehan",
     "rating": 3.3,
@@ -1589,6 +1667,14 @@
     "difficulty": 2.7,
     "would_take_again": 92.8571,
     "rmp_id": "1933457"
+  },
+  "catherine klapperich": {
+    "name": "Catherine Klapperich",
+    "rating": 5,
+    "num_ratings": 1,
+    "difficulty": 1,
+    "would_take_again": 100,
+    "rmp_id": "3027881"
   },
   "catherine larrow": null,
   "catherine murray": null,
@@ -1944,6 +2030,14 @@
     "would_take_again": 70.8333,
     "rmp_id": "2170504"
   },
+  "christopher seferlis": {
+    "name": "Chris Seferlis",
+    "rating": 4.4,
+    "num_ratings": 7,
+    "difficulty": 3.3,
+    "would_take_again": 100,
+    "rmp_id": "2875718"
+  },
   "christopher terranova": null,
   "christos cassandras": {
     "name": "Christos Cassandras",
@@ -1977,8 +2071,17 @@
     "would_take_again": 50,
     "rmp_id": "1851637"
   },
+  "chun-yi sum": {
+    "name": "Chun Sum",
+    "rating": 2.8,
+    "num_ratings": 36,
+    "difficulty": 3.5,
+    "would_take_again": 36.1111,
+    "rmp_id": "2680199"
+  },
   "cinzia arruzza": null,
   "claire kapitan": null,
+  "claudio ferre": null,
   "clay hopper": {
     "name": "Clay Hopper",
     "rating": 0,
@@ -2012,6 +2115,7 @@
     "would_take_again": -1,
     "rmp_id": "1380946"
   },
+  "corin duey": null,
   "cornelia streeter": {
     "name": "Nina Streeter",
     "rating": 3.1,
@@ -2248,6 +2352,14 @@
   },
   "david boas": null,
   "david campbell": null,
+  "david carballo": {
+    "name": "David Carballo",
+    "rating": 4.4,
+    "num_ratings": 15,
+    "difficulty": 2.9,
+    "would_take_again": 83.3333,
+    "rmp_id": "1558576"
+  },
   "david castanon": {
     "name": "David Castanon",
     "rating": 4.1,
@@ -2256,6 +2368,7 @@
     "would_take_again": 71.4286,
     "rmp_id": "940780"
   },
+  "david engel": null,
   "david frankfurter": {
     "name": "David Frankfurter",
     "rating": 3.1,
@@ -2433,6 +2546,7 @@
     "would_take_again": 100,
     "rmp_id": "922985"
   },
+  "deborah carr": null,
   "deborah fountain": {
     "name": "Deborah Fountain",
     "rating": 0,
@@ -2481,13 +2595,21 @@
     "would_take_again": 82.3529,
     "rmp_id": "257178"
   },
+  "debra borkovitz": {
+    "name": "Debra Borkovitz",
+    "rating": 3.6,
+    "num_ratings": 30,
+    "difficulty": 2.3,
+    "would_take_again": 73.3333,
+    "rmp_id": "2597340"
+  },
   "deeana klepper": {
     "name": "Deeana Klepper",
-    "rating": 1,
-    "num_ratings": 1,
-    "difficulty": 3,
-    "would_take_again": 0,
-    "rmp_id": "2652078"
+    "rating": 3.8,
+    "num_ratings": 55,
+    "difficulty": 3.5,
+    "would_take_again": 66.6667,
+    "rmp_id": "73758"
   },
   "deepak rauniyar": null,
   "deepti ghadiyaram": {
@@ -2524,6 +2646,7 @@
     "rmp_id": "3152467"
   },
   "deniz cetin corbaci": null,
+  "deniz kizildag": null,
   "dennis wuerthner": {
     "name": "Dennis Wuerthner",
     "rating": 3.7,
@@ -2568,11 +2691,11 @@
   },
   "diane allenberg": {
     "name": "Diane Allenberg",
-    "rating": 4.2,
-    "num_ratings": 119,
-    "difficulty": 3.1,
-    "would_take_again": 71.4286,
-    "rmp_id": "67947"
+    "rating": 4,
+    "num_ratings": 1,
+    "difficulty": 4,
+    "would_take_again": 100,
+    "rmp_id": "1991042"
   },
   "diane fargo": null,
   "diane heislein": null,
@@ -2588,9 +2711,9 @@
   "didem vardar-ulu": {
     "name": "Didem Vardar-Ulu",
     "rating": 2,
-    "num_ratings": 117,
-    "difficulty": 4.7,
-    "would_take_again": 23.0088,
+    "num_ratings": 118,
+    "difficulty": 4.8,
+    "would_take_again": 23.6842,
     "rmp_id": "2085477"
   },
   "dillon brout": {
@@ -2674,6 +2797,14 @@
     "would_take_again": 100,
     "rmp_id": "2827764"
   },
+  "donna pincus": {
+    "name": "Donna Pincus",
+    "rating": 4.3,
+    "num_ratings": 26,
+    "difficulty": 2.6,
+    "would_take_again": 76.9231,
+    "rmp_id": "1283929"
+  },
   "dora erdos": {
     "name": "Dora Erdos",
     "rating": 3.3,
@@ -2699,11 +2830,19 @@
     "would_take_again": 83.3333,
     "rmp_id": "1553112"
   },
+  "douglas holmes": {
+    "name": "Douglas Holmes",
+    "rating": 4.8,
+    "num_ratings": 4,
+    "difficulty": 3,
+    "would_take_again": 100,
+    "rmp_id": "1996329"
+  },
   "dustin allen": {
     "name": "Dustin Allen",
-    "rating": 4.8,
-    "num_ratings": 9,
-    "difficulty": 3,
+    "rating": 4.5,
+    "num_ratings": 10,
+    "difficulty": 3.1,
     "would_take_again": 90,
     "rmp_id": "2608321"
   },
@@ -2790,6 +2929,7 @@
     "would_take_again": 79.4872,
     "rmp_id": "2688869"
   },
+  "eleonora grotteria": null,
   "eleonora mancuso": {
     "name": "Renato Mancuso",
     "rating": 4.5,
@@ -3193,13 +3333,14 @@
     "would_take_again": 62.5,
     "rmp_id": "2942058"
   },
+  "farah adeed": null,
   "fargol khosravanifard": null,
   "farshid alizadeh-shabdiz": {
     "name": "Farshid Alizadeh-Shabdiz",
-    "rating": 2.2,
-    "num_ratings": 18,
-    "difficulty": 3.9,
-    "would_take_again": 22.2222,
+    "rating": 2.1,
+    "num_ratings": 19,
+    "difficulty": 4,
+    "would_take_again": 21.0526,
     "rmp_id": "2697361"
   },
   "fatema fazendeiro": {
@@ -3243,6 +3384,7 @@
     "would_take_again": 100,
     "rmp_id": "2912519"
   },
+  "fintan bracken": null,
   "florian bodamer": null,
   "fnu rajagopal": null,
   "fotios kokkotos": null,
@@ -3336,6 +3478,7 @@
     "would_take_again": -1,
     "rmp_id": "2582178"
   },
+  "gabrielle franklin": null,
   "gabrielle-marie cosmiano": null,
   "gael orsmond": null,
   "galina paquette": {
@@ -3677,9 +3820,9 @@
   "hayford avedzi": {
     "name": "Hayford Avedzi",
     "rating": 4,
-    "num_ratings": 29,
+    "num_ratings": 30,
     "difficulty": 2.3,
-    "would_take_again": 68.9655,
+    "would_take_again": 70,
     "rmp_id": "3029712"
   },
   "hazal aydin": null,
@@ -3736,9 +3879,9 @@
   "herbert golder": {
     "name": "Herb Golder",
     "rating": 2.5,
-    "num_ratings": 65,
+    "num_ratings": 66,
     "difficulty": 3.4,
-    "would_take_again": 13.0435,
+    "would_take_again": 12.5,
     "rmp_id": "287856"
   },
   "hiroaki kaido": {
@@ -3764,6 +3907,14 @@
     "difficulty": 2.2,
     "would_take_again": 68.75,
     "rmp_id": "925938"
+  },
+  "holly stone": {
+    "name": "John Stone",
+    "rating": 2.2,
+    "num_ratings": 42,
+    "difficulty": 3.5,
+    "would_take_again": 0,
+    "rmp_id": "70471"
   },
   "hong ko": {
     "name": "Hong Ko",
@@ -3917,6 +4068,14 @@
     "would_take_again": 50,
     "rmp_id": "937901"
   },
+  "irving bigio": {
+    "name": "Irving Bigio",
+    "rating": 3,
+    "num_ratings": 8,
+    "difficulty": 3.1,
+    "would_take_again": 100,
+    "rmp_id": "404880"
+  },
   "isaac fried": {
     "name": "Isaac Fried",
     "rating": 2.8,
@@ -3977,6 +4136,14 @@
     "rmp_id": "2629466"
   },
   "jack whitten": null,
+  "jacob brown": {
+    "name": "Kate Brown",
+    "rating": 4.9,
+    "num_ratings": 14,
+    "difficulty": 2.6,
+    "would_take_again": 100,
+    "rmp_id": "2249516"
+  },
   "jacob burg": {
     "name": "Jacob Burg",
     "rating": 4.5,
@@ -4236,6 +4403,7 @@
   },
   "jason carter": null,
   "jason dunn": null,
+  "jason michelitch": null,
   "jason prentice": {
     "name": "Jason Prentice",
     "rating": 4,
@@ -4304,13 +4472,14 @@
     "rmp_id": "67910"
   },
   "jeffrey allen": {
-    "name": "Jeff Allen",
-    "rating": 4,
-    "num_ratings": 112,
-    "difficulty": 3.8,
-    "would_take_again": 71.6216,
-    "rmp_id": "326402"
+    "name": "Jeffrey Allen",
+    "rating": 0,
+    "num_ratings": 0,
+    "difficulty": 0,
+    "would_take_again": -1,
+    "rmp_id": "2728163"
   },
+  "jeffrey burrows": null,
   "jeffrey carruthers": {
     "name": "Jeff Carruthers",
     "rating": 3.2,
@@ -4342,6 +4511,14 @@
     "difficulty": 0,
     "would_take_again": -1,
     "rmp_id": "2689564"
+  },
+  "jeffrey rubin": {
+    "name": "Jeffrey Rubin",
+    "rating": 3.2,
+    "num_ratings": 46,
+    "difficulty": 3.9,
+    "would_take_again": 46.1538,
+    "rmp_id": "138735"
   },
   "jen jiun choi": {
     "name": "Kyung Choi",
@@ -4416,6 +4593,7 @@
     "rmp_id": "2598087"
   },
   "jennifer culbert": null,
+  "jennifer gerbino": null,
   "jennifer kaldenberg": null,
   "jennifer mandolese": {
     "name": "Jennifer Mandolese",
@@ -4434,6 +4612,22 @@
     "rmp_id": "3055906"
   },
   "jennifer wendler": null,
+  "jennifer zuk": {
+    "name": "Jennifer Zuk",
+    "rating": 4.7,
+    "num_ratings": 3,
+    "difficulty": 3,
+    "would_take_again": 100,
+    "rmp_id": "2904838"
+  },
+  "jeremy menchik": {
+    "name": "Jeremy Menchik",
+    "rating": 4.3,
+    "num_ratings": 20,
+    "difficulty": 2.8,
+    "would_take_again": 71.4286,
+    "rmp_id": "1872979"
+  },
   "jerome mertz": {
     "name": "Jerome Mertz",
     "rating": 3.6,
@@ -4519,6 +4713,14 @@
   },
   "jessica stanton": null,
   "jessica stering": null,
+  "jessica stern": {
+    "name": "Jessica Stern",
+    "rating": 5,
+    "num_ratings": 1,
+    "difficulty": 3,
+    "would_take_again": 100,
+    "rmp_id": "2198340"
+  },
   "jessie franco": {
     "name": "Jessie Franco",
     "rating": 2.4,
@@ -4638,10 +4840,10 @@
   },
   "joan salge-blake": {
     "name": "Joan Salge-Blake",
-    "rating": 4.1,
-    "num_ratings": 37,
+    "rating": 4.2,
+    "num_ratings": 38,
     "difficulty": 2.2,
-    "would_take_again": 64.2857,
+    "would_take_again": 66.6667,
     "rmp_id": "424633"
   },
   "joanna davidson": {
@@ -4744,9 +4946,9 @@
   "john caradonna": {
     "name": "John Caradonna",
     "rating": 2.2,
-    "num_ratings": 207,
+    "num_ratings": 208,
     "difficulty": 4.5,
-    "would_take_again": 14.2012,
+    "would_take_again": 14.1176,
     "rmp_id": "385691"
   },
   "john celenza": {
@@ -4944,6 +5146,14 @@
     "rmp_id": "3101982"
   },
   "jonathan klawans": null,
+  "jonathan mijs": {
+    "name": "Jonathan Mijs",
+    "rating": 0,
+    "num_ratings": 0,
+    "difficulty": 0,
+    "would_take_again": -1,
+    "rmp_id": "2736304"
+  },
   "jonathan ribner": {
     "name": "Jonathan Ribner",
     "rating": 3.5,
@@ -5209,6 +5419,7 @@
     "would_take_again": 0,
     "rmp_id": "311528"
   },
+  "juwon hwang": null,
   "jyoti puri": null,
   "kurt cavender": null,
   "kabrina chang": {
@@ -5317,6 +5528,14 @@
     "rmp_id": "3115327"
   },
   "karisma verma": null,
+  "karl kirchwey": {
+    "name": "Karl Kirchwey",
+    "rating": 0,
+    "num_ratings": 0,
+    "difficulty": 0,
+    "would_take_again": -1,
+    "rmp_id": "3021130"
+  },
   "karl ludwig": {
     "name": "Karl Ludwig",
     "rating": 4.4,
@@ -5421,6 +5640,7 @@
     "rmp_id": "1784638"
   },
   "kathy sem": null,
+  "katie wynn": null,
   "katja davidoff": {
     "name": "Katja Davidoff",
     "rating": 4.8,
@@ -5428,6 +5648,14 @@
     "difficulty": 2.5,
     "would_take_again": 100,
     "rmp_id": "3056699"
+  },
+  "katrina nguyen": {
+    "name": "Timothy Nguyen",
+    "rating": 5,
+    "num_ratings": 5,
+    "difficulty": 1.6,
+    "would_take_again": 100,
+    "rmp_id": "2969953"
   },
   "katya ravid": null,
   "kaushik vardharajan": {
@@ -5438,6 +5666,7 @@
     "would_take_again": 65.3061,
     "rmp_id": "2726636"
   },
+  "kavon karrobi": null,
   "kayhan batmanghelich": {
     "name": "Kayhan Batmanghelich",
     "rating": 1.5,
@@ -5671,6 +5900,14 @@
     "would_take_again": 85.7143,
     "rmp_id": "2997204"
   },
+  "kirby chazal": {
+    "name": "Kirby Chazal",
+    "rating": 4.4,
+    "num_ratings": 15,
+    "difficulty": 2.3,
+    "would_take_again": 70,
+    "rmp_id": "2070283"
+  },
   "kirill korolev": {
     "name": "Kirill Korolev",
     "rating": 1.8,
@@ -5699,6 +5936,14 @@
     "rmp_id": "2233018"
   },
   "kiyan irani": null,
+  "kohaku flynn": {
+    "name": "Brian Flynn",
+    "rating": 5,
+    "num_ratings": 5,
+    "difficulty": 1.8,
+    "would_take_again": 100,
+    "rmp_id": "2896198"
+  },
   "koritha mitchell": {
     "name": "Koritha Mitchell",
     "rating": 0,
@@ -5834,6 +6079,7 @@
     "would_take_again": 77.5,
     "rmp_id": "1408992"
   },
+  "laura kerharo": null,
   "laura thompson": {
     "name": "Laura Thompson",
     "rating": 5,
@@ -5963,6 +6209,8 @@
     "would_take_again": 28.5714,
     "rmp_id": "213851"
   },
+  "len tetta": null,
+  "lena champlin": null,
   "leonid levin": {
     "name": "Leonid Levin",
     "rating": 1.6,
@@ -6090,11 +6338,19 @@
   },
   "linda doerrer": {
     "name": "Linda Doerrer",
-    "rating": 2.8,
-    "num_ratings": 24,
-    "difficulty": 3.7,
-    "would_take_again": 33.3333,
+    "rating": 2.7,
+    "num_ratings": 25,
+    "difficulty": 3.8,
+    "would_take_again": 31.8182,
     "rmp_id": "1113649"
+  },
+  "lindsay gould": {
+    "name": "Douglas Gould",
+    "rating": 3.5,
+    "num_ratings": 6,
+    "difficulty": 3.7,
+    "would_take_again": 40,
+    "rmp_id": "2059540"
   },
   "lindsey locks": {
     "name": "Lindsey Locks",
@@ -6241,9 +6497,9 @@
   "luluah mustafa": {
     "name": "Luluah Mustafa",
     "rating": 4.7,
-    "num_ratings": 27,
+    "num_ratings": 28,
     "difficulty": 3.3,
-    "would_take_again": 90,
+    "would_take_again": 90.9091,
     "rmp_id": "1619481"
   },
   "lyana sun han chang": {
@@ -6303,6 +6559,14 @@
     "difficulty": 3.1,
     "would_take_again": 61.1111,
     "rmp_id": "787083"
+  },
+  "mackenzie patterson": {
+    "name": "Anita Patterson",
+    "rating": 4.3,
+    "num_ratings": 32,
+    "difficulty": 2.8,
+    "would_take_again": 75,
+    "rmp_id": "117340"
   },
   "madani naidjate": {
     "name": "Madani Naidjate",
@@ -6388,6 +6652,14 @@
     "difficulty": 2.7,
     "would_take_again": 91.6667,
     "rmp_id": "2065285"
+  },
+  "marc rysman": {
+    "name": "Marc Rysman",
+    "rating": 4.5,
+    "num_ratings": 30,
+    "difficulty": 3,
+    "would_take_again": 83.3333,
+    "rmp_id": "182612"
   },
   "marc weinberg": {
     "name": "Marc Weinberg",
@@ -6496,6 +6768,7 @@
     "would_take_again": 60,
     "rmp_id": "3045951"
   },
+  "maria zabaneh": null,
   "marianne baxter": {
     "name": "Marianne Baxter",
     "rating": 2.3,
@@ -6619,6 +6892,14 @@
     "would_take_again": 100,
     "rmp_id": "2658954"
   },
+  "mark williams": {
+    "name": "Mark Williams",
+    "rating": 4.7,
+    "num_ratings": 65,
+    "difficulty": 3,
+    "would_take_again": 97.561,
+    "rmp_id": "312225"
+  },
   "marshall van alstyne": {
     "name": "Marshall Alstyne",
     "rating": 0,
@@ -6674,6 +6955,14 @@
     "difficulty": 3.2,
     "would_take_again": -1,
     "rmp_id": "273773"
+  },
+  "mary battenfeld": {
+    "name": "Mary Battenfeld",
+    "rating": 4.8,
+    "num_ratings": 8,
+    "difficulty": 2.6,
+    "would_take_again": 87.5,
+    "rmp_id": "2553998"
   },
   "mary bertrand": null,
   "mary bussiere": null,
@@ -6958,6 +7247,14 @@
     "would_take_again": 51.8519,
     "rmp_id": "1187195"
   },
+  "melinda lopez": {
+    "name": "Pedro Lopez",
+    "rating": 4,
+    "num_ratings": 2,
+    "difficulty": 3.5,
+    "would_take_again": 50,
+    "rmp_id": "2940257"
+  },
   "melisa osborne": {
     "name": "Melissa Osborne",
     "rating": 5,
@@ -6996,6 +7293,14 @@
   },
   "meredith olsson": null,
   "meroline bazile": null,
+  "merry white": {
+    "name": "Merry White",
+    "rating": 2.9,
+    "num_ratings": 43,
+    "difficulty": 3.4,
+    "would_take_again": 25,
+    "rmp_id": "264252"
+  },
   "mesfin woldegebriel": {
     "name": "Mesfin Woldegebriel",
     "rating": 0,
@@ -7003,6 +7308,22 @@
     "difficulty": 0,
     "would_take_again": -1,
     "rmp_id": "3071186"
+  },
+  "micah goodrich": {
+    "name": "Micah Goodrich",
+    "rating": 4.7,
+    "num_ratings": 9,
+    "difficulty": 2.1,
+    "would_take_again": 88.8889,
+    "rmp_id": "2827679"
+  },
+  "micah trautmann": {
+    "name": "Micah Trautmann",
+    "rating": 3.8,
+    "num_ratings": 5,
+    "difficulty": 2.4,
+    "would_take_again": 40,
+    "rmp_id": "2826659"
   },
   "michael albro": {
     "name": "Michael Albro",
@@ -7037,9 +7358,9 @@
   "michael degener": {
     "name": "J. Michael Degener",
     "rating": 3,
-    "num_ratings": 128,
+    "num_ratings": 129,
     "difficulty": 3.7,
-    "would_take_again": 40,
+    "would_take_again": 39.1304,
     "rmp_id": "68917"
   },
   "michael davis": {
@@ -7124,6 +7445,14 @@
     "rmp_id": "1742224"
   },
   "michael o'mara": null,
+  "michael otto": {
+    "name": "Michael Otto",
+    "rating": 4.1,
+    "num_ratings": 20,
+    "difficulty": 3,
+    "would_take_again": 100,
+    "rmp_id": "960270"
+  },
   "michael parzen": null,
   "michael pascale": null,
   "michael smith": {
@@ -7152,11 +7481,11 @@
   },
   "michael zell": {
     "name": "Michael Zell",
-    "rating": 3.4,
-    "num_ratings": 8,
-    "difficulty": 3.5,
-    "would_take_again": 62.5,
-    "rmp_id": "2172608"
+    "rating": 4.4,
+    "num_ratings": 32,
+    "difficulty": 3.1,
+    "would_take_again": 77.7778,
+    "rmp_id": "175972"
   },
   "michaela mcsweeney": {
     "name": "Michaela McSweeney",
@@ -7208,6 +7537,7 @@
     "would_take_again": 67.8571,
     "rmp_id": "2245083"
   },
+  "michelle montague": null,
   "michelle sander": {
     "name": "Michelle Sander",
     "rating": 3.8,
@@ -7604,6 +7934,7 @@
     "would_take_again": 100,
     "rmp_id": "2939363"
   },
+  "nicolas wittstock": null,
   "nicole huth": {
     "name": "James Huth",
     "rating": 1,
@@ -7899,6 +8230,23 @@
     "would_take_again": 66.6667,
     "rmp_id": "270667"
   },
+  "paul hare": {
+    "name": "Paul Hare",
+    "rating": 4.7,
+    "num_ratings": 17,
+    "difficulty": 2.1,
+    "would_take_again": 85.7143,
+    "rmp_id": "1378800"
+  },
+  "paul katsafanas": {
+    "name": "Paul Katsafanas",
+    "rating": 4.3,
+    "num_ratings": 34,
+    "difficulty": 2.8,
+    "would_take_again": 93.75,
+    "rmp_id": "1506440"
+  },
+  "paul lazarescu": null,
   "paul piwko": {
     "name": "Paul Piwko",
     "rating": 3.5,
@@ -7949,6 +8297,14 @@
     "difficulty": 2.3,
     "would_take_again": 100,
     "rmp_id": "2892185"
+  },
+  "payton kuhn": {
+    "name": "Mary Kuhn",
+    "rating": 4.6,
+    "num_ratings": 8,
+    "difficulty": 3.3,
+    "would_take_again": -1,
+    "rmp_id": "1342936"
   },
   "peda mucic": null,
   "pegeen ryan": {
@@ -8004,6 +8360,22 @@
     "rmp_id": "79113"
   },
   "peter wysocki": null,
+  "petra hundemer-friedman": {
+    "name": "Petra Hundemer-Friedman",
+    "rating": 4,
+    "num_ratings": 4,
+    "difficulty": 3.5,
+    "would_take_again": 75,
+    "rmp_id": "2352467"
+  },
+  "petro lisowsky": {
+    "name": "Petro Lisowsky",
+    "rating": 5,
+    "num_ratings": 1,
+    "difficulty": 3,
+    "would_take_again": 100,
+    "rmp_id": "2815077"
+  },
   "petrus liu": {
     "name": "Petrus Liu",
     "rating": 5,
@@ -8027,6 +8399,14 @@
     "difficulty": 2.1,
     "would_take_again": 100,
     "rmp_id": "1792135"
+  },
+  "phillip haberkern": {
+    "name": "Phillip Haberkern",
+    "rating": 4.9,
+    "num_ratings": 24,
+    "difficulty": 2.7,
+    "would_take_again": 93.3333,
+    "rmp_id": "1643233"
   },
   "phillip lobel": {
     "name": "Phillip Lobel",
@@ -8080,6 +8460,7 @@
     "would_take_again": 0,
     "rmp_id": "2940255"
   },
+  "pratistha joshi rajkarnikar": null,
   "preethi narayanan": {
     "name": "Preethi Narayanan",
     "rating": 4.5,
@@ -8178,6 +8559,7 @@
     "rmp_id": "2675590"
   },
   "rachel ferrigno": null,
+  "rachel greene": null,
   "rachel meade": {
     "name": "Rachel Meade",
     "rating": 3,
@@ -8676,6 +9058,14 @@
     "rmp_id": "2403258"
   },
   "sam kubica": null,
+  "sam ling": {
+    "name": "Sam Ling",
+    "rating": 4.7,
+    "num_ratings": 39,
+    "difficulty": 1.8,
+    "would_take_again": 100,
+    "rmp_id": "2056729"
+  },
   "sam sarkisian": {
     "name": "Sam Sarkisian",
     "rating": 4.5,
@@ -8720,6 +9110,14 @@
     "rmp_id": "2515436"
   },
   "samira roshni adhar": null,
+  "samuel cook": {
+    "name": "Lana Cook",
+    "rating": 5,
+    "num_ratings": 2,
+    "difficulty": 1,
+    "would_take_again": 100,
+    "rmp_id": "3085369"
+  },
   "samuel dasaratha": {
     "name": "Krishna Dasaratha",
     "rating": 5,
@@ -8776,6 +9174,14 @@
     "difficulty": 3,
     "would_take_again": 20,
     "rmp_id": "2328154"
+  },
+  "sandra lim": {
+    "name": "Li-Mei Lim",
+    "rating": 3,
+    "num_ratings": 4,
+    "difficulty": 3.3,
+    "would_take_again": 25,
+    "rmp_id": "2805811"
   },
   "sandra mcevoy": {
     "name": "Sandra McEvoy",
@@ -8920,10 +9326,10 @@
   "sayed kashua": null,
   "scott arena": {
     "name": "Scott Arena",
-    "rating": 3.6,
-    "num_ratings": 36,
+    "rating": 3.5,
+    "num_ratings": 37,
     "difficulty": 3.7,
-    "would_take_again": 57.1429,
+    "would_take_again": 55.5556,
     "rmp_id": "1943284"
   },
   "scott butterfield": {
@@ -9056,6 +9462,7 @@
     "would_take_again": 81.25,
     "rmp_id": "2693960"
   },
+  "shannon whittaker": null,
   "shari franzetta": null,
   "sharon goldberg": {
     "name": "Sharon Goldberg",
@@ -9073,6 +9480,14 @@
     "difficulty": 2.6,
     "would_take_again": 100,
     "rmp_id": "2738649"
+  },
+  "sheila russo": {
+    "name": "Sheila Russo",
+    "rating": 5,
+    "num_ratings": 4,
+    "difficulty": 3,
+    "would_take_again": 100,
+    "rmp_id": "2650617"
   },
   "sheila sitomer": {
     "name": "Sheila Sitomer",
@@ -9152,6 +9567,14 @@
     "would_take_again": 25,
     "rmp_id": "320315"
   },
+  "shunto kobayashi": {
+    "name": "Shunto Kobayashi",
+    "rating": 0,
+    "num_ratings": 0,
+    "difficulty": 0,
+    "would_take_again": -1,
+    "rmp_id": "3052120"
+  },
   "shutan dong": {
     "name": "Shutan Dong",
     "rating": 5,
@@ -9195,6 +9618,14 @@
   },
   "siddharth sheth": null,
   "silvia miotti": null,
+  "simon payaslian": {
+    "name": "Simon Payaslian",
+    "rating": 4.5,
+    "num_ratings": 27,
+    "difficulty": 2.3,
+    "would_take_again": 95,
+    "rmp_id": "1191295"
+  },
   "simon turner": null,
   "simone gill": {
     "name": "Christopher Gill",
@@ -9203,6 +9634,14 @@
     "difficulty": 2,
     "would_take_again": 100,
     "rmp_id": "1900209"
+  },
+  "sirui chen": {
+    "name": "Joanne Chen",
+    "rating": 3.5,
+    "num_ratings": 8,
+    "difficulty": 3.5,
+    "would_take_again": 62.5,
+    "rmp_id": "2942058"
   },
   "siu lau": {
     "name": "Siu-Cheong Lau",
@@ -9236,6 +9675,14 @@
     "difficulty": 4.5,
     "would_take_again": 26.4706,
     "rmp_id": "2582596"
+  },
+  "solesne bourguin": {
+    "name": "Solesne Bourguin",
+    "rating": 3,
+    "num_ratings": 17,
+    "difficulty": 3.5,
+    "would_take_again": 41.1765,
+    "rmp_id": "2282627"
   },
   "solomon owusu": {
     "name": "Solomon Owusu",
@@ -9282,10 +9729,10 @@
   },
   "spencer piston": {
     "name": "Spencer Piston",
-    "rating": 4.1,
-    "num_ratings": 39,
+    "rating": 4.2,
+    "num_ratings": 40,
     "difficulty": 2.6,
-    "would_take_again": 84.6154,
+    "would_take_again": 85,
     "rmp_id": "2238912"
   },
   "srdjan divac": {
@@ -9506,12 +9953,12 @@
     "rmp_id": "1901568"
   },
   "susan griffin": {
-    "name": "Sue Griffin",
-    "rating": 4.6,
-    "num_ratings": 57,
+    "name": "Susan Griffin",
+    "rating": 4.7,
+    "num_ratings": 3,
     "difficulty": 2.3,
-    "would_take_again": 87.5,
-    "rmp_id": "507045"
+    "would_take_again": 100,
+    "rmp_id": "2476617"
   },
   "susan kandarian": null,
   "susan mcgurk": {
@@ -9675,9 +10122,9 @@
   "taymaz davoodi": {
     "name": "Taymaz Davoodi",
     "rating": 3.5,
-    "num_ratings": 28,
-    "difficulty": 2.5,
-    "would_take_again": 60.7143,
+    "num_ratings": 29,
+    "difficulty": 2.6,
+    "would_take_again": 58.6207,
     "rmp_id": "2880036"
   },
   "teena purohit": {
@@ -9696,6 +10143,14 @@
     "difficulty": 4.2,
     "would_take_again": 19.0476,
     "rmp_id": "2772990"
+  },
+  "tesla cariani": {
+    "name": "Tesla Cariani",
+    "rating": 5,
+    "num_ratings": 1,
+    "difficulty": 2,
+    "would_take_again": 100,
+    "rmp_id": "3093911"
   },
   "thang ha": null,
   "theophilos kamperides": null,
@@ -9886,6 +10341,14 @@
   },
   "tommy taslim": null,
   "toni armstrong": null,
+  "toshi nishimura": {
+    "name": "Toshi Nishimura",
+    "rating": 5,
+    "num_ratings": 12,
+    "difficulty": 2.2,
+    "would_take_again": 100,
+    "rmp_id": "2481111"
+  },
   "traci hong": {
     "name": "Traci Hong",
     "rating": 4.3,
@@ -9956,9 +10419,9 @@
   "uwe beffert": {
     "name": "Uwe Beffert",
     "rating": 4,
-    "num_ratings": 231,
+    "num_ratings": 232,
     "difficulty": 4.1,
-    "would_take_again": 74.5192,
+    "would_take_again": 74.1627,
     "rmp_id": "1992672"
   },
   "vahid azadeh-ranjbar": null,
@@ -10058,6 +10521,7 @@
   },
   "vijaya kolachalama": null,
   "vinitra nathan": null,
+  "viola monovich": null,
   "virginia best": null,
   "virginia sacchi": null,
   "vivek goyal": {
@@ -10075,6 +10539,14 @@
     "difficulty": 2.7,
     "would_take_again": 100,
     "rmp_id": "1061848"
+  },
+  "viviane klein": {
+    "name": "Viviane Sophie Klein",
+    "rating": 5,
+    "num_ratings": 31,
+    "difficulty": 2.5,
+    "would_take_again": 100,
+    "rmp_id": "1879755"
   },
   "vladimir kleptsyn": {
     "name": "Vladimir Kleptsyn",
@@ -10148,6 +10620,22 @@
     "difficulty": 2.7,
     "would_take_again": 100,
     "rmp_id": "936306"
+  },
+  "weike wang": {
+    "name": "Tianyu Wang",
+    "rating": 1,
+    "num_ratings": 7,
+    "difficulty": 4.7,
+    "would_take_again": 0,
+    "rmp_id": "2989223"
+  },
+  "wen-hao tien": {
+    "name": "Joe Tien",
+    "rating": 3.6,
+    "num_ratings": 42,
+    "difficulty": 4.1,
+    "would_take_again": 50,
+    "rmp_id": "368523"
   },
   "wendy goldberg": {
     "name": "Sharon Goldberg",
@@ -10294,6 +10782,14 @@
     "would_take_again": 100,
     "rmp_id": "2019411"
   },
+  "xuefei jin": {
+    "name": "Ha Jin",
+    "rating": 4.3,
+    "num_ratings": 6,
+    "difficulty": 3.2,
+    "would_take_again": -1,
+    "rmp_id": "75952"
+  },
   "xuezhou zhang": {
     "name": "Xuezhou Zhang",
     "rating": 2.4,
@@ -10326,6 +10822,14 @@
     "would_take_again": 82.9787,
     "rmp_id": "2008970"
   },
+  "yakeel quiroz": {
+    "name": "Yakeel Quiroz",
+    "rating": 0,
+    "num_ratings": 0,
+    "difficulty": 0,
+    "would_take_again": -1,
+    "rmp_id": "3159083"
+  },
   "yan-ting chen": {
     "name": "Joanne Chen",
     "rating": 3.5,
@@ -10343,6 +10847,14 @@
     "rmp_id": "3048389"
   },
   "yasemin girgin": null,
+  "yasmeen raffee": {
+    "name": "Yasmeen Raffee",
+    "rating": 0,
+    "num_ratings": 0,
+    "difficulty": 0,
+    "would_take_again": -1,
+    "rmp_id": "3154289"
+  },
   "yaw sam-kwachie": null,
   "yelin zhao": {
     "name": "Yelin Zhao",
@@ -10351,6 +10863,14 @@
     "difficulty": 2.6,
     "would_take_again": 79.1045,
     "rmp_id": "2663869"
+  },
+  "yide cai": {
+    "name": "Wenjun Cai",
+    "rating": 4.8,
+    "num_ratings": 4,
+    "difficulty": 2.5,
+    "would_take_again": 100,
+    "rmp_id": "2573200"
   },
   "yigong hu": {
     "name": "Yigong Hu",
@@ -10393,7 +10913,7 @@
     "would_take_again": 38.4615,
     "rmp_id": "2495573"
   },
-  "yoon yang": {
+  "yoon sun yang": {
     "name": "Yoon Sun Yang",
     "rating": 3.9,
     "num_ratings": 12,

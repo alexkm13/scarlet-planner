@@ -13,31 +13,37 @@ Usage:
 """
 
 import json
-import os
 import time
 import sys
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 
-import requests
+try:
+    import requests
+except ImportError:
+    print("Install requests: pip install requests")
+    sys.exit(1)
 
 
-def _load_cookies() -> dict[str, str]:
-    """Load session cookies from BU_COOKIES_JSON (JSON string) or BU_COOKIES_FILE (path)."""
-    raw = os.environ.get("BU_COOKIES_JSON", "").strip()
-    if raw:
-        try:
-            return json.loads(raw)
-        except json.JSONDecodeError:
-            pass
-    path = os.environ.get("BU_COOKIES_FILE", "").strip()
-    if path and Path(path).exists():
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
-    return {}
-
-
-COOKIES = _load_cookies()
+# ============================================================================
+# YOUR SESSION COOKIES (from browser DevTools)
+# ============================================================================
+COOKIES = {
+  "79eb100099b9a8bf": "3:false:.bu.edu",
+  "mybustudent-PORTAL-PSJSESSIONID": "0c3aa5a4bc992563d7867cc6e537a6e69e0b66e0",
+  "_shibsession_64656661756c7468747470733a2f2f6d79627573747564656e742e62752e6564752f73702f73686962626f6c657468": "_147cb96bcc34a37cd30b8df701a42474",
+  "JSESSIONID": "7fE1OqWXUIne3Z1U4j4tlEZti1fUqXsV!1627343887",
+  "ExpirePage": "https://mybustudent.bu.edu/psp/BUPRD/",
+  "PS_LOGINLIST": "https://mybustudent.bu.edu/BUPRD",
+  "PS_TOKEN": "pQAAAAQDAgEBAAAAvAIAAAAAAAAsAAAABABTaGRyAk4AbQg4AC4AMQAwABTsCH+d98SUTV86d+zFvviB8P2PbmUAAAAFAFNkYXRhWXicHYk7CoAwEAUnUazEmxhMDFqLRAs/CFrYeQJv6OHcZB/MDOwL5JlWSvxp0pUDK4GbjYUisDNTHZxMXDyMUt7R4OiokyNjW1qM0Am92NBLW5mXDz9zWAta",
+  "PS_TokenSite": "https://mybustudent.bu.edu/psp/BUPRD/?JSESSIONID",
+  "SignOnDefault": "",
+  "PS_LASTSITE": "https://mybustudent.bu.edu/psp/BUPRD/",
+  "hpt_institution": "BU001",
+  "lcsrftoken": "mCWKEnhCjLcrrFxY1B/K3oz/VoqHREuHZGzkQmZOwQU=",
+  "CSRFCookie": "77507a90-51ec-4226-a74f-bdc5660e05cc",
+  "PS_TOKENEXPIRE": "6_Feb_2026_23:16:46_GMT"
+}
 
 
 # ============================================================================
@@ -285,10 +291,6 @@ class BUScraper:
         course_list = data.get("courses", [])
         
         for item in course_list:
-            # Only process courses with open terms (currently offered)
-            if not item.get("has_open_terms") and self.fetch_details:
-                continue
-            
             college = subject[:3]
             dept = subject[3:]
             catalog_nbr = item.get("catalog_nbr", "").strip()
@@ -514,12 +516,6 @@ class BUScraper:
 
 def main():
     import argparse
-    
-    if not COOKIES:
-        print("Error: No session cookies. Set BU_COOKIES_JSON or BU_COOKIES_FILE.")
-        print("  BU_COOKIES_JSON: JSON object string of name=value cookies")
-        print("  BU_COOKIES_FILE: path to a .json file with the same format")
-        sys.exit(1)
     
     parser = argparse.ArgumentParser(description="Scrape BU courses")
     parser.add_argument("-o", "--output", default="data/courses.json")

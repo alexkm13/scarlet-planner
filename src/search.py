@@ -234,9 +234,10 @@ class CourseIndex:
         return self.bitmap_index.get_values('subject')
     
     def get_terms(self) -> list[str]:
-        terms = self.bitmap_index.get_values('term')
-        # Sort by recency (assumes format like "Fall 2026")
-        return sorted(terms, key=lambda t: t.split()[-1] if t.split() else t, reverse=True)
+        from src.config import DISPLAY_TERMS
+        terms = set(self.bitmap_index.get_values('term'))
+        # Only return terms in DISPLAY_TERMS that have courses
+        return [t for t in DISPLAY_TERMS if t in terms]
     
     def get_hub_units(self) -> list[str]:
         return self.bitmap_index.get_values('hub')

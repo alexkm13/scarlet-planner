@@ -71,3 +71,6 @@ DEFAULT_SEMESTER = "Fall 2025"
 
 # Terms to exclude from loading
 EXCLUDED_TERMS = {"Term 2265"}  # Summer terms
+
+# Terms to show in the filter dropdown (others are hidden)
+DISPLAY_TERMS = ["Fall 2025", "Spring 2026"]
