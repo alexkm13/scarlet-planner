@@ -91,11 +91,11 @@ class TestCourseSearchEndpoint:
 
 
 class TestCourseBatchEndpoint:
-    """Tests for /api/courses/batch endpoint."""
+    """Tests for /api/schedule/courses endpoint."""
 
     def test_get_courses_batch(self, test_client):
         response = test_client.get(
-            "/api/courses/batch?id=CAS-CS-111-A1-Fall2025&id=CAS-CS-112-A1-Fall2025"
+            "/api/schedule/courses?id=CAS-CS-111-A1-Fall2025&id=CAS-CS-112-A1-Fall2025"
         )
         assert response.status_code == 200
         data = response.json()
@@ -106,12 +106,12 @@ class TestCourseBatchEndpoint:
         assert "CAS-CS-112-A1-Fall2025" in ids
 
     def test_get_courses_batch_empty(self, test_client):
-        response = test_client.get("/api/courses/batch")
+        response = test_client.get("/api/schedule/courses")
         assert response.status_code == 422  # Missing required query param
 
     def test_get_courses_batch_unknown_id(self, test_client):
         response = test_client.get(
-            "/api/courses/batch?id=CAS-CS-111-A1-Fall2025&id=FAKE-ID"
+            "/api/schedule/courses?id=CAS-CS-111-A1-Fall2025&id=FAKE-ID"
         )
         assert response.status_code == 200
         data = response.json()

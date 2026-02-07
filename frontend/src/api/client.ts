@@ -55,7 +55,7 @@ export async function getCoursesBatch(courseIds: string[]): Promise<Course[]> {
   if (courseIds.length === 0) return [];
   const params = new URLSearchParams();
   courseIds.forEach((id) => params.append('id', id));
-  const response = await fetch(apiUrl(`/api/courses/batch?${params.toString()}`));
+  const response = await fetch(apiUrl(`/api/schedule/courses?${params.toString()}`));
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);
   }

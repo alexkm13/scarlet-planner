@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { getCourse, getCoursesBatch, exportSchedule } from '../api/client';
-import { buildScheduleResponse, detectConflicts } from '../lib/schedule';
+import { getCoursesBatch, exportSchedule } from '../api/client';
+import { buildScheduleResponse } from '../lib/schedule';
 import type { Course, ScheduleResponse, ScheduleConflict } from '../types';
 
 const STORAGE_KEY = 'bu-course-schedule';
@@ -68,8 +68,11 @@ export function useLocalSchedule() {
         }
         setCourses(ordered);
       })
-      .catch(() => {
-        if (!cancelled) setCourses([]);
+      .catch((err) => {
+        if (!cancelled) {
+          setCourses([]);
+          console.error('Failed to load schedule courses:', err);
+        }
       })
       .finally(() => {
         if (!cancelled) setIsLoading(false);
@@ -88,26 +91,14 @@ export function useLocalSchedule() {
         return { success: true, conflicts: [] };
       }
       setIsAdding(true);
-      try {
-        const course = await getCourse(courseId);
-        const newIds = [...courseIds, courseId];
-        setCourseIds(newIds);
-
-        // New conflicts = conflicts involving the new course
-        const allCourses = [...courses, course];
-        const allConflicts = detectConflicts(allCourses);
-        const newConflicts = allConflicts.filter(
-          (c) => c.course1_id === courseId || c.course2_id === courseId
-        );
-
-        return { success: true, conflicts: newConflicts };
-      } catch {
-        return { success: false, conflicts: [] };
-      } finally {
-        setIsAdding(false);
-      }
+      const newIds = [...courseIds, courseId];
+      setCourseIds(newIds);
+      setIsAdding(false);
+      // Optimistic update: courseIds change triggers useEffect -> getCoursesBatch.
+      // Conflicts are computed when courses load.
+      return { success: true, conflicts: [] };
     },
-    [courseIds, courses]
+    [courseIds]
   );
 
   const removeCourse = useCallback(async (courseId: string): Promise<boolean> => {

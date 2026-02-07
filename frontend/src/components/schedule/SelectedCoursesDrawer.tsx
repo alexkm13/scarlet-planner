@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Calendar, Download, Trash2, X } from 'lucide-react';
-import { useLocalSchedule } from '../../hooks/useLocalSchedule';
+import { useSchedule } from '../../contexts/ScheduleContext';
 import { ScheduleCalendar } from './ScheduleCalendar';
 
 interface SelectedCoursesDrawerProps {
@@ -10,7 +10,7 @@ interface SelectedCoursesDrawerProps {
 }
 
 export function SelectedCoursesDrawer({ isOpen, onClose, onExport }: SelectedCoursesDrawerProps) {
-  const { schedule, removeCourse } = useLocalSchedule();
+  const { schedule, removeCourse } = useSchedule();
   const [showCalendar, setShowCalendar] = useState(false);
 
   const hasCourses = schedule.courses.length > 0;

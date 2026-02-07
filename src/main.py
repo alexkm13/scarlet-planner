@@ -124,7 +124,7 @@ async def search_courses(
         )
 
 
-@app.get("/api/courses/batch")
+@app.get("/api/schedule/courses")
 async def get_courses_batch(id: list[str] = Query(..., description="Course IDs")):
     """Fetch multiple courses by ID. Used for loading schedule from localStorage."""
     courses = [course_index.get_by_id(cid) for cid in id]

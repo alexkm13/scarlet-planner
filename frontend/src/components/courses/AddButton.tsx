@@ -1,17 +1,16 @@
 import { Plus, Minus } from 'lucide-react';
-import { useLocalSchedule } from '../../hooks/useLocalSchedule';
+import { useSchedule } from '../../contexts/ScheduleContext';
 
 interface AddButtonProps {
   courseId: string;
 }
 
 export function AddButton({ courseId }: AddButtonProps) {
-  const { addCourse, removeCourse, isInSchedule } = useLocalSchedule();
+  const { addCourse, removeCourse, isInSchedule } = useSchedule();
   const inSchedule = isInSchedule(courseId);
 
   const handleClick = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    
     if (inSchedule) {
       await removeCourse(courseId);
     } else {
@@ -21,6 +20,7 @@ export function AddButton({ courseId }: AddButtonProps) {
 
   return (
     <button
+      type="button"
       onClick={handleClick}
       className={inSchedule ? "p-1.5 text-red-500" : "p-1.5 text-green-500"}
       title={inSchedule ? "Remove from schedule" : "Add to schedule"}

@@ -11,7 +11,7 @@ import { CourseModal } from './components/courses/CourseModal';
 import { Pagination } from './components/ui/Pagination';
 import { SelectedCoursesDrawer } from './components/schedule/SelectedCoursesDrawer';
 import { useCourses } from './hooks/useCourses';
-import { useLocalSchedule } from './hooks/useLocalSchedule';
+import { useSchedule } from './contexts/ScheduleContext';
 import type { Course, SortOption, Filters, Meeting } from './types';
 
 const ITEMS_PER_PAGE = 50;
@@ -54,7 +54,7 @@ function App() {
   const [grouped, setGrouped] = useState(true);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { schedule, handleExport } = useLocalSchedule();
+  const { schedule, handleExport } = useSchedule();
 
   // Debounce search input
   useEffect(() => {
